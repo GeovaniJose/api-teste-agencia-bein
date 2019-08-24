@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "author": "Geovani José",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^14.0.2"
+  }
 }
