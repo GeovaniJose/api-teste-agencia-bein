@@ -23,7 +23,7 @@ module.exports = {
 
   async store (req, res) {
     try {
-      const todo = await Todo.create({ ...req.body, user: '5d60d97fefcb89526ca7ec09' })
+      const todo = await Todo.create({ ...req.body, user: req.userId })
 
       return res.json(todo)
     } catch (err) {
