@@ -2,6 +2,8 @@ require('dotenv/config')
 const express = require('express')
 const mongoose = require('mongoose')
 
+const routes = require('./routes')
+
 // Iniciando o app
 const app = express()
 app.use(express.json())
@@ -15,4 +17,7 @@ mongoose.connect(
     useFindAndModify: false
   })
 
-app.listen(3333, () => console.log('Server listening...'))
+// Rotas
+app.use('/api', routes)
+
+app.listen(3333)
