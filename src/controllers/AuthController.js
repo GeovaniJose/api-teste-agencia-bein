@@ -1,5 +1,3 @@
-const bcrypt = require('bcryptjs')
-
 const User = require('../models/User')
 
 module.exports = {
@@ -13,13 +11,16 @@ module.exports = {
         return res.status(400).json({ error: 'User not found' })
       }
 
-      if (!await bcrypt.compare(password_hash, user.password_hash)) {
+      if (!await user.compareHash(password_hash)) {
         return res.status(400).json({ error: 'Invalid password' })
       }
 
       user.password_hash = undefined
 
-      return res.json(user)
+      return res.json({
+        user,
+        token: user.generateToken()
+      })
     } catch (err) {
       return res.status(400).json({ error: 'Authentication failed' })
     }
