@@ -4,6 +4,9 @@
   "main": "server.js",
   "author": "Geovani José",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
   "devDependencies": {
     "nodemon": "^1.19.1",
     "standard": "^14.0.2"
