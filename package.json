@@ -5,6 +5,7 @@
   "author": "Geovani José",
   "license": "MIT",
   "devDependencies": {
+    "nodemon": "^1.19.1",
     "standard": "^14.0.2"
   }
 }
